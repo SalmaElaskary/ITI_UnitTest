@@ -57,7 +57,8 @@ namespace TestProject1
         [Fact]
         public void CanLogin()
         {
-            UserRepository _db;
+            DBContext db = new DBContext();
+            UserRepository _db=new UserRepository(db);
             User u = new User() { Email="csdfd@aea.sss",Password="2653"};
             user = _db.GetALL().FirstOrDefault(c => c.Email == u.Email && c.Password == u.Password);
 

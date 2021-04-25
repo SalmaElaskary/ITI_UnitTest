@@ -70,14 +70,23 @@ namespace Models.Migrations
                         new
                         {
                             Id = 1,
+                            Email = "sdsdsd@asds.ccc",
                             Password = "1234",
                             UserName = "Salma"
                         },
                         new
                         {
                             Id = 2,
+                            Email = "cvfg@asds.ccc",
                             Password = "1234",
                             UserName = "Rehab"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Email = "dfdf@sds.ccc",
+                            Password = "1234",
+                            UserName = "Rawan"
                         });
                 });
 
@@ -120,6 +129,12 @@ namespace Models.Migrations
                             Id = 2,
                             RId = 2,
                             UId = 1
+                        },
+                        new
+                        {
+                            Id = 3,
+                            RId = 2,
+                            UId = 3
                         });
                 });
 
