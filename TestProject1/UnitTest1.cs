@@ -1,6 +1,7 @@
 using Lab1_UnitTest.Models;
 using Repositories;
 using System;
+using System.Linq;
 using Xunit;
 
 namespace TestProject1
@@ -9,6 +10,8 @@ namespace TestProject1
     {
         int UserId;
         int RoleId;
+        User user = new User();
+
         [Fact]
         public void AdminExist1()
         {
@@ -49,5 +52,19 @@ namespace TestProject1
         {
             Assert.True(UserId == RoleId);
         }
+
+
+        [Fact]
+        public void CanLogin()
+        {
+            UserRepository _db;
+            User u = new User() { Email="csdfd@aea.sss",Password="2653"};
+            user = _db.GetALL().FirstOrDefault(c => c.Email == u.Email && c.Password == u.Password);
+
+            Assert.True(user!=null);
+
+        }
+
+
     }
 }

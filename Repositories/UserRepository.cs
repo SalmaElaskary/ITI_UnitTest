@@ -47,5 +47,17 @@ namespace Repositories
         {
             throw new NotImplementedException();
         }
+        public bool IsLoginMember(User user)
+        {
+            var u = new User();
+            if(user!=null)
+            {
+                u = GetALL().FirstOrDefault(c => c.Email == user.Email && c.Password == user.Password);
+
+                if (u != null)
+                    return true;
+            }
+            return false;
+        }
     }
 }

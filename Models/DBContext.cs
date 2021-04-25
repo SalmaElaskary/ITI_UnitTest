@@ -18,8 +18,8 @@ namespace Lab1_UnitTest.Models
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<User>().HasData(
-                new User {Id = 1, UserName = "Salma" },
-                 new User { Id = 2, UserName = "Rehab" }
+                new User {Id = 1, UserName = "Salma",Password="1234" ,Email="sdsdsd@asds.ccc"},
+                 new User { Id = 2, UserName = "Rehab", Password = "1234", Email = "cvfg@asds.ccc" }
                 );
             modelBuilder.Entity<Role>().HasData(
                 new Role { Id = 1, RoleName = "Admin" },
@@ -33,7 +33,7 @@ namespace Lab1_UnitTest.Models
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("server=.;database=UserRoleDB;trusted_connection=true");
+            optionsBuilder.UseSqlServer("server=.;database=UserRoleDB1;trusted_connection=true");
             // base.OnConfiguring(optionsBuilder);
         }
     }
