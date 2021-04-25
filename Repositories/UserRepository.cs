@@ -1,10 +1,12 @@
 ﻿using Lab1_UnitTest.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Repositories
 {
-    public class UserRepository : IRepositoryBase<Role>
+    public class UserRepository : IRepositoryBase<User>
     {
         public DBContext _db { get; set; }
 
@@ -13,27 +15,34 @@ namespace Repositories
             _db = db;
         }
 
-        public Role Add(Role data)
+        public User Add(User data)
         {
-            throw new NotImplementedException();
+            _db.Add(data);
+            _db.SaveChanges();
+            return data;
         }
 
         public bool Delete(int id)
         {
-            throw new NotImplementedException();
+            _db.Remove(_db.Users.FirstOrDefault(d => d.Id == id));
+            return true;
         }
 
-        public Role Edit(Role data)
+        public User Edit(User data)
         {
-            throw new NotImplementedException();
+            User oldUser = _db.Users.FirstOrDefault(d => d.Id == data.Id);
+            oldUser.UserName = data.UserName;
+            oldUser.Email = data.Email;
+            return oldUser;
         }
 
-        public List<Role> GetALL()
+        public List<User> GetALL()
         {
-            throw new NotImplementedException();
+            return _db.Users.Include(d => d.User_Roles).ToList();
+           
         }
 
-        public Role Getbyid(int id)
+        public User Getbyid(int id)
         {
             throw new NotImplementedException();
         }

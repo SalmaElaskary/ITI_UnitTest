@@ -1,4 +1,5 @@
 ﻿using Lab1_UnitTest.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,17 +28,20 @@ namespace Repositories
 
         public List<Role> GetALL()
         {
-            throw new NotImplementedException();
+            return _db.Roles.Include(d => d.User_Roles).ToList();
         }
 
-        public bool Delete(int id)
+            public bool Delete(int id)
         {
-            throw new NotImplementedException();
+            _db.Remove(_db.Roles.FirstOrDefault(d => d.Id == id));
+            return true;
         }
 
         public Role Edit(Role data)
         {
-            throw new NotImplementedException();
+            Role oldRole = _db.Roles.FirstOrDefault(d => d.Id== data.Id);
+            oldRole.RoleName = data.RoleName;
+            return oldRole;
         }
 
         public Role Getbyid(int id)

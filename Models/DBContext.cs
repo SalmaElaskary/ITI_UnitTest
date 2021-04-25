@@ -8,9 +8,9 @@ namespace Lab1_UnitTest.Models
 {
     public class DBContext : DbContext
     {
-        DbSet<User> Users;
-        DbSet<Role> Roles;
-        DbSet<User_Role> User_Roles;
+       public DbSet<User> Users;
+        public DbSet<Role> Roles;
+        public DbSet<User_Role> User_Roles;
         //public DBContext(DbContextOptions options):base(options)
         //{
 
