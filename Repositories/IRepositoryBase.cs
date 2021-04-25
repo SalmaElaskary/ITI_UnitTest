@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace Repositories
 {
-    class IRepositoryBase
+    interface IRepositoryBase<T>
     {
+        T Add(T data);
+        List<T> GetALL();
+        bool Delete(int id);
+        T Edit(T data);
+        T Getbyid(int id);
     }
 }
