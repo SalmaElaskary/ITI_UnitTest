@@ -12,7 +12,7 @@ namespace Repositories
     {
         public DBContext _db { get; set; }
 
-        RoleRepository(DBContext db)
+       public RoleRepository(DBContext db)
         {
             _db = db;
         }

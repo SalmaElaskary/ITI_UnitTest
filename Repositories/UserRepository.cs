@@ -10,10 +10,11 @@ namespace Repositories
     {
         public DBContext _db { get; set; }
 
-        UserRepository(DBContext db)
+        public UserRepository(DBContext db)
         {
             _db = db;
         }
+      
 
         public User Add(User data)
         {
