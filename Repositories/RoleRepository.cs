@@ -18,7 +18,11 @@ namespace Repositories
 
         public Role Add(Role data)
         {
-            throw new NotImplementedException();
+            _db.Add(data);
+            _db.SaveChanges();
+            return data;
+            //throw new NotImplementedException();
+
         }
 
         public List<Role> GetALL()

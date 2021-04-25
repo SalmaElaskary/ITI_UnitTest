@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
-namespace Lab1_UnitTest.Migrations
+namespace Models.Migrations
 {
     [DbContext(typeof(DBContext))]
     partial class DBContextModelSnapshot : ModelSnapshot

@@ -1,8 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace Lab1_UnitTest.Migrations
+namespace Models.Migrations
 {
-    public partial class FirstMigration : Migration
+    public partial class MigratData : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

@@ -7,11 +7,11 @@ using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
-namespace Lab1_UnitTest.Migrations
+namespace Models.Migrations
 {
     [DbContext(typeof(DBContext))]
-    [Migration("20210425084316_FirstMigration")]
-    partial class FirstMigration
+    [Migration("20210425100208_MigratData")]
+    partial class MigratData
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
